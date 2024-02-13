@@ -105,6 +105,7 @@ height: auto; /* Biarkan ketinggian menyesuaikan agar proporsi gambar tetap */
     <form id="orderForm">
         <div class="menu-item">
             <label for="menu1">Menu 1:</label>
+            <option value="" disabled selected>Pilih Menu 1</option>
             <select name="menu1" id="menu1">
             <option value="Nasi Kulit Krispi">Nasi Kulit Krispi 17k</option>
             <option value="Nasi Telur Krispi">Nasi Telur Krispi 17k</option>
@@ -115,13 +116,15 @@ height: auto; /* Biarkan ketinggian menyesuaikan agar proporsi gambar tetap */
             <option value="Bakso Korea">Bakso Korea 13k</option>
             <option value="Mercon Seger">Mercon Seger 17k</option>
             <option value="Asinan Buah">Asinan Buah 15k</option>
+                                <!-- Sisanya tetap sama -->
+
         
             </select>
         </div>
         <div class="menu-item">
             <label for="menu2">Menu 2:</label>
             <select name="menu2" id="menu2">
-
+            <option value="" disabled selected>Pilih Menu 2</option>
             <option value="Piscok Lumer 4pcs">Piscok Lumer 4pcs 12k</option>
             <option value="Martabak Telur">Martabak Telur 12k</option>
             <option value="Maartabak Tahu">Martabak Tahu 12k</option>
@@ -131,12 +134,15 @@ height: auto; /* Biarkan ketinggian menyesuaikan agar proporsi gambar tetap */
             <option value="Es Matcha">Es Matcha 8k</option>
             <option value="Es Kul-kul Buah">Es Kul-kul Buah/pcs 4k</option>
             <option value="Es Bubblegum">Es Bubblegum 8k</option>
+                                <!-- Sisanya tetap sama -->
+
             
             </select>
         </div>
         <div class="menu-item">
             <label for="menu3">Menu 3:</label>
             <select name="menu3" id="menu3">
+            <option value="" disabled selected>Pilih Menu 3</option>
             <option value="Nastar">Nastar 35k</option>
             <option value="Sambal Cumi">Sambal Cumi 22k</option>
             <option value="Sambal Ayam">Sambal Ayam 22k</option>
@@ -146,10 +152,8 @@ height: auto; /* Biarkan ketinggian menyesuaikan agar proporsi gambar tetap */
             <option value="Bakso Kuah">Bakso Kuah 10k</option>
             <option value="Otak-otak">Otak-otak 8k</option>
             <option value="Cemilan">Cemilan 10k</option>
+                            <!-- Sisanya tetap sama -->
 
-
-            
-            
             </select>
         
         </div>
@@ -283,6 +287,7 @@ function sendWhatsAppMessage() {
     var alamat = form.elements["alamat"].value;
 
     var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\nBerikut detail pesanan Anda:\nMenu 1: " + menu1 + "\nMenu 2: " + menu2 + "\nMenu 3: " + menu3 + "\nAlamat pengiriman: " + alamat;
+        var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\nBerikut detail pesanan Anda:\nMenu 1: " + menu1 + "\nMenu 2: " + menu2 + "\nMenu 3: " + menu3 + "\nAlamat pengiriman: " + alamat + "\n\nPesanan Anda akan segera kami proses.";
 
     // Ganti nomor WhatsApp sesuai kebutuhan
     var phoneNumber = "6281225858050";
