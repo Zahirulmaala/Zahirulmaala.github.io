@@ -56,16 +56,11 @@ color: #ffffff; /* Putih */
         margin-bottom: 10px;
     }
     .menu-item label {
-        flex: 1;
         color: #333;
     }
-    .menu-item select {
-        flex: 2;
+    .menu-item select, .menu-item input {
         padding: 5px;
-    }
-    .menu-item input {
-        flex: 1;
-        padding: 3px;
+        margin-left: 5px; /* Memberikan jarak antara input dan label */
     }
     .btn-submit {
         display: block;
@@ -91,10 +86,29 @@ color: #ffffff; /* Putih */
     }
 
     .image-gallery img {
-        max-width: 20%;
-        height: auto;max-width: 30%; /* Adjust the percentage based on your layout */
-    
-}
+        max-width: 100%;
+        height: auto; /* Mengatur gambar agar tidak terdistorsi */
+    }
+
+    /* Media query untuk ukuran layar ponsel */
+    @media screen and (max-width: 480px) {
+        .container {
+            padding: 10px;
+        }
+        .menu-item {
+            flex-direction: column; /* Mengatur item menu agar tampil vertikal */
+        }
+        .menu-item select, .menu-item input {
+            width: 100%; /* Mengatur lebar input agar memenuhi lebar layar */
+            margin-left: 0; /* Menghapus margin kiri */
+            margin-top: 5px; /* Memberi sedikit jarak antara item menu */
+        }
+        .btn-submit {
+            margin-top: 10px; /* Memberi sedikit jarak antara tombol dan item menu */
+        }
+        .menu-item label {
+            text-align: right; /* Mengatur teks label agar rata kanan pada layar ponsel */
+        }
     }
 </style>
 </head>
@@ -114,25 +128,20 @@ color: #ffffff; /* Putih */
     <form id="orderForm">
         
             <img src="image1.jpg" alt="Gambar 1">
+
+
             <div class ="menu-item"></div>
-            <label for="menu1">Menu 1 :</label>
+            <label for="menu1">Name Menu :</label>
             <select name="menu1" id="menu1">
-                <option value="0" disabled selected>Pilih Menu 1</option>
+                <option value="0" disabled selected></option>
                 <option value="15">15.000- Nasi Ayam SerunDazzle</option>
                 
             </select>
                 <button type="button" onclick="cancelMenu('menu1')">Batal</button>
-        </div>
-
-        <div class="menu-item">
-            <label for="quantity1">Amount:</label>
+            <label for="quantity1">Amount :</label>
             <input type="number" id="quantity1" name="quantity1" min="0" value="0">
             
-        </div>
-    
-
-        <div class="menu-item">
-            <label for="total">Price :</label>
+            <label for="total">Total Price :</label>
             <input type="text" id="total" name="total" readonly>
         </div>
         <button type="button" class="btn-submit" onclick="calculateTotal()"> CalculateTotal</button>
@@ -168,7 +177,6 @@ color: #ffffff; /* Putih */
     document.getElementById(menuId).selectedIndex = 0;
 
     // Mengosongkan nilai input jumlah menu
-    document.getElementById(menuId + "_quantity").value = "";
 }
 
 function calculateTotal() {
@@ -219,7 +227,6 @@ function sendWhatsAppMessage() {
 
 function cancelMenu(menuId) {
     document.getElementById(menuId).selectedIndex = 0; // Mengatur pilihan menu kembali ke opsi default
-    document.getElementById(menuId + "_quantity").value = ""; // Mengosongkan input jumlah menu
 }
 
 }
