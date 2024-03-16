@@ -8,35 +8,23 @@
 <style>
     
     body {
-        background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700, #FFA500, #FFD700, #FFA500, #FFD700, #FFA500);
-        background-size: 200% 200%;
-        animation: gradientBackground 10s ease infinite alternate;
-        color: #333;
+        background-color: #f5f5f5; /* Warna latar belakang */
+        color: #333; /* Warna teks */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f0f0f0;
         margin: 0;
         padding: 20px;
     }
 
-    @keyframes gradientBackground {
-        0% {
-            background-position: 0% 0%;
-        }
-        100% {
-            background-position: 100% 100%;
-        }
-    }
-
     header {
-        background-color: #4682B4;
-        color: #fff;
+        background-color: #4CAF50; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
         padding: 7px 0;
     }
 
     .container {
         max-width: 1000px;
         margin: auto;
-        background-color: hsl(12, 9%, 90%);
+        background-color: #fff; /* Warna latar belakang */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -78,7 +66,7 @@
     .btn-submit {
         padding: 10px;
         margin-top: 10px;
-        background-color: #4682B4; /* Warna latar belakang */
+        background-color: #4CAF50; /* Warna latar belakang */
         color: #fff; /* Warna teks */
         border: none;
         border-radius: 4px;
@@ -94,7 +82,7 @@
         margin-left: auto; /* Ratakan tombol "Pesan via WhatsApp" ke kanan */
     }
     footer {
-        background-color: #4682B4; /* Warna latar belakang */
+        background-color: #4CAF50; /* Warna latar belakang */
         color: #fff; /* Warna teks */
         text-align: center;
         padding:7px;
@@ -116,6 +104,23 @@
         .left-column,
         .right-column {
             width: 100%;
+        }
+    }
+
+    /* Animasi untuk latar belakang */
+    body {
+        animation: gradientBackground 10s ease infinite;
+    }
+
+    @keyframes gradientBackground {
+        0% {
+            background-color: #f5f5f5;
+        }
+        50% {
+            background-color: #ddd;
+        }
+        100% {
+            background-color: #f5f5f5;
         }
     }
 
@@ -143,17 +148,22 @@
 <form id="orderForm" class="container">
     <div class="left-column">
         <div class="menu-item">
-            <label for="menu1">Name Menu :</label>
+            <label for="menu1">Menu :</label>
             <select name="menu1" id="menu1">
                 <option value="0" disabled selected></option>
                 <option value="15">15.000- Nasi Ayam SerunDazzle</option>
             </select>
-            <button type="button" onclick="cancelMenu('menu1')">Batal</button>
+            
         </div>
         <div class="menu-item">
-            <label for="nama">Nama & Alamat  :</label>
+            <label for="nama">Nama :</label>
             <input type="text" id="nama" name="nama">
         </div>
+        
+        <div class="menu-item">
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" name="alamat">
+        
     </div>
     <div class="right-column">
         <div class="menu-item">
@@ -161,7 +171,7 @@
             <input type="number" id="quantity1" name="quantity1" min="0" value="0">
         </div>
         <div class="menu-item">
-            <label for="total">Total Harga</label>
+            <label for="total">  Harga:</label>
             <input type="text" id="total" name="total" readonly>
         </div>
         <div class="btn-container">
@@ -175,9 +185,9 @@
     <div class="left-column">
         <h2>Metode Pembayaran</h2>
         <ul>
-            <li>DANA-OVO-GoPay : 081225858050</li>
-            <li>Bank Jago : Nomor Rekening: 508489581079 (Findi Kristiana Dewi S)</li>
-            <li>Bank BNI : Nomor Rekening: 1764437171 (Findi Kristiana Dewi S)</li>
+            <li>DANA-OVO-GoPay 081225858050</li>
+            <li>Bank Jago 508489581079 (Findi Kristiana Dewi S)</li>
+            <li>Bank BNI 1764437171 (Findi Kristiana Dewi S)</li>
         </ul>
         <p> Konfirmasi via WhatsApp dengan menyertakan bukti transfer dan nomor pesanan Anda.</p>
     </div>
