@@ -1,260 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pemesanan Menu Makanan via WhatsApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Menu Makanan via WhatsApp</title>
 
-<style>
-    
-    body {
-        background-color: #f5f5f5; /* Warna latar belakang */
-        color: #333; /* Warna teks */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 20px;
-    }
+    <style>
+        body {
+            background-image: url('background_image.jpg'); /* Ganti 'background_image.jpg' dengan URL atau path ke gambar latar belakang Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: moveBackground 30s linear infinite alternate;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
 
-    header {
-        background-color: #4CAF50; /* Warna latar belakang */
-        color: #fff; /* Warna teks */
-        padding: 7px 0;
-    }
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
 
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        background-color: #fff; /* Warna latar belakang */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .left-column,
-    .right-column {
-        width: 45%;
-    }
-    h1 {
-        text-align: center;
-        color: #333;
-        font-size: 3em; /* Mengatur ukuran font */
-    }
-    h2 {
-        color: #FF5733;
-        text-align: center;
-    }
+        header {
+            background-color: #4682B4;
+            color: #fff;
+            padding: 7px 0;
+        }
 
-    .menu-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .menu-item label {
-        color: #333;
-        width: 150px;
-        margin-right: 10px;
-        text-align: right;
-    }
-    .menu-item select, 
-    .menu-item input {
-        padding: 5px;
-        margin-left: 5px;
-        flex: 1;
-    }
-    .btn-submit {
-        padding: 10px;
-        margin-top: 10px;
-        background-color: #4CAF50; /* Warna latar belakang */
-        color: #fff; /* Warna teks */
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: calc(50% - 5px); /* Lebar tombol diatur 50% minus 5px untuk margin */
-    }
-    .btn-container {
-        display: flex;
-        flex-direction: row; /* Mengatur agar tombol berada dalam satu baris */
-        justify-content: space-between; /* Mengatur agar tombol berada pada ujung kanan dan kiri */
-    }
-    .btn-container button {
-        margin-left: auto; /* Ratakan tombol "Pesan via WhatsApp" ke kanan */
-    }
-    footer {
-        background-color: #4CAF50; /* Warna latar belakang */
-        color: #fff; /* Warna teks */
-        text-align: center;
-        padding:7px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: hsl(12, 9%, 90%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-    .image-gallery {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    .image-gallery img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Media query untuk ukuran layar ponsel */
-    @media screen and (max-width: 768px) {
         .left-column,
         .right-column {
-            width: 100%;
+            width: 45%;
         }
-    }
 
-    /* Animasi untuk latar belakang */
-    body {
-        animation: gradientBackground 10s ease infinite;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 3em;
+        }
 
-    @keyframes gradientBackground {
-        0% {
-            background-color: #f5f5f5;
+        h2 {
+            color: #FF5733;
+            text-align: center;
         }
-        50% {
-            background-color: #ddd;
-        }
-        100% {
-            background-color: #f5f5f5;
-        }
-    }
 
-    /* CSS untuk logo */
-    .logo {
-        max-width: 200px; /* Sesuaikan ukuran logo sesuai kebutuhan */
-        margin: 0 auto; /* Pusatkan logo di tengah */
-        display: block; /* Atur agar gambar menampilkan sebagai blok */
-    }
-</style>
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-item label {
+            color: #333;
+            width: 200px;
+            margin-right: 20px;
+            text-align: right;
+        }
+
+        .menu-item select,
+        .menu-item input {
+            padding: 10px;
+            flex: 1;
+        }
+
+        .btn-submit {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4682B4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-container button {
+            margin-left: auto;
+        }
+
+        footer {
+            background-color: #4682B4;
+            color: #fff;
+            text-align: center;
+            padding: 7px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <!-- Gambar sebagai logo -->
     <img class="logo" src="image1.jpg" alt="ZAHIRUL MA'ALA">
 
-<h1 id="headline">ZAHIRUL MA'ALA</h1><br>
-<section class="featured">
+    <h1 id="headline">ZAHIRUL MA'ALA</h1><br>
+    <section class="featured">
+        <div class="container">
+            <h2>OPEN PRE-ORDER NOW!!!</h2>
+            <div class="image-gallery">
+            </div>
+        </div>
+    </section>
+
+    <form id="orderForm" class="container">
+        <div class="left-column">
+            <div class="menu-item">
+                <label for="menu1">Name Menu :</label>
+                <select name="menu1" id="menu1">
+                    <option value="0" disabled selected></option>
+                    <option value="15000">Nasi Ayam SerunDazzle (Rp15.000)</option>
+                </select>
+                <button type="button" onclick="cancelMenu('menu1')">Batal</button>
+            </div>
+            <div class="menu-item">
+                <label for="nama">Nama & Alamat  :</label>
+                <input type="text" id="nama" name="nama">
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="menu-item">
+                <label for="quantity1">Jumlah:</label>
+                <input type="number" id="quantity1" name="quantity1" min="0" value="0">
+            </div>
+            <div class="menu-item">
+                <label for="total">Total Harga</label>
+                <input type="text" id="total" name="total" readonly>
+            </div>
+            <div class="btn-container">
+                <button type="button" class="btn-submit" onclick="calculateTotal()">Calculate Total</button>
+                <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
+            </div>
+        </div>
+    </form>
+
     <div class="container">
-        <h2>OPEN PRE-ORDER NOW!!!</h2>
-        <div class="image-gallery">
+        <div class="left-column">
+            <h2>Metode Pembayaran</h2>
+            <ul>
+                <li>DANA-OVO-GoPay : 081225858050</li>
+                <li>Bank Jago : Nomor Rekening: 508489581079 (Findi Kristiana Dewi S)</li>
+                <li>Bank BNI : Nomor Rekening: 1764437171 (Findi Kristiana Dewi S)</li>
+            </ul>
+            <p> Konfirmasi via WhatsApp dengan menyertakan bukti transfer dan nomor pesanan Anda.</p>
+        </div>
+        <div class="right-column">
+            <img src="image1.jpg" alt="Metode Pembayaran" style="max-width: 100%;">
         </div>
     </div>
-</section>
 
-<form id="orderForm" class="container">
-    <div class="left-column">
-        <div class="menu-item">
-            <label for="menu1">Menu :</label>
-            <select name="menu1" id="menu1">
-                <option value="0" disabled selected></option>
-                <option value="15">15.000- Nasi Ayam SerunDazzle</option>
-            </select>
-            
-        </div>
-        <div class="menu-item">
-            <label for="nama">Nama :</label>
-            <input type="text" id="nama" name="nama">
-        </div>
-        
-        <div class="menu-item">
-            <label for="alamat">Alamat:</label>
-            <input type="text" id="alamat" name="alamat">
-        
-    </div>
-    <div class="right-column">
-        <div class="menu-item">
-            <label for="quantity1">Jumlah:</label>
-            <input type="number" id="quantity1" name="quantity1" min="0" value="0">
-        </div>
-        <div class="menu-item">
-            <label for="total">  Harga:</label>
-            <input type="text" id="total" name="total" readonly>
-        </div>
-        <div class="btn-container">
-            <button type="button" class="btn-submit" onclick="calculateTotal()">Calculate Total</button>
-            <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
-        </div>
-    </div>
-</form>
+    <footer>
+        <p>&copy; 2024 ZAHIRUL MA'ALA </p>
+    </footer>
 
-<div class="container">
-    <div class="left-column">
-        <h2>Metode Pembayaran</h2>
-        <ul>
-            <li>DANA-OVO-GoPay 081225858050</li>
-            <li>Bank Jago 508489581079 (Findi Kristiana Dewi S)</li>
-            <li>Bank BNI 1764437171 (Findi Kristiana Dewi S)</li>
-        </ul>
-        <p> Konfirmasi via WhatsApp dengan menyertakan bukti transfer dan nomor pesanan Anda.</p>
-    </div>
-    <div class="right-column">
-        <img src="image1.jpg" alt="Metode Pembayaran" style="max-width: 100%;">
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 ZAHIRUL MA'ALA </p>
-</footer>
-
-<script>
-function cancelMenu(menuId) {
-    // Mengatur pilihan menu kembali ke opsi default
-    document.getElementById(menuId).selectedIndex = 0;
-}
-
-function calculateTotal() {
-    var menu1Price = parseInt(document.getElementById("menu1").value);
-    var quantity1 = parseInt(document.getElementById("quantity1").value);
-
-    // Menghitung total harga untuk setiap menu
-    var totalMenu1 = menu1Price * quantity1;
-
-    // Menjumlahkan total harga dari semua menu
-    var total = totalMenu1;
-    
-    // Menampilkan total harga di elemen input
-    document.getElementById("total").value = total + "k";
-}
-
-function sendWhatsAppMessage() {
-    var form = document.getElementById("orderForm");
-    var menu1 = form.elements["menu1"].options[form.elements["menu1"].selectedIndex].text;
-    var quantity1 = form.elements["quantity1"].value;
-    var total = document.getElementById("total").value;
-    var namaPembeli = form.elements["nama"].value;
-
-    var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\n\n" +
-                  "Berikut detail pesanan Anda:\n" +
-                  "Menu 1: " + menu1 + " (Jumlah: " + quantity1 + ")\n" +
-                  "Total Harga: " + total + "\n\n" +
-                  "Pesanan Anda akan segera kami proses.";
-
-    var phoneNumber = "6281542053486"; // Ganti dengan nomor WhatsApp Anda
-    var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
-    
-    window.open(url, '_blank');
-}
-
-// Animasi untuk menampilkan tulisan satu per satu
-document.addEventListener("DOMContentLoaded", function() {
-    var headline = document.getElementById('headline');
-    var text = headline.innerText;
-    headline.innerText = '';
-
-    var i = 0;
-    function type() {
-        if (i < text.length) {
-            headline.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 150); // Waktu delay per huruf (milidetik)
+    <script>
+        function cancelMenu(menuId) {
+            document.getElementById(menuId).selectedIndex = 0;
         }
-    }
-    type();
-});
-</script>
+
+        function calculateTotal() {
+            var menu1Price = parseInt(document.getElementById("menu1").value);
+            var quantity1 = parseInt(document.getElementById("quantity1").value);
+            var totalMenu1 = menu1Price * quantity1;
+            var total = totalMenu1;
+            document.getElementById("total").value = total.toLocaleString('id-ID') + " IDR";
+        }
+
+        function sendWhatsAppMessage() {
+            var form = document.getElementById("orderForm");
+            var menu1 = form.elements["menu1"].options[form.elements["menu1"].selectedIndex].text;
+            var quantity1 = form.elements["quantity1"].value;
+            var total = document.getElementById("total").value;
+            var namaPembeli = form.elements["nama"].value;
+            var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\n\n" +
+                "Berikut detail pesanan Anda:\n" +
+                "Menu 1: " + menu1 + " (Jumlah: " + quantity1 + ")\n" +
+                "Total Harga: " + total + "\n\n" +
+                "Pesanan Anda akan segera kami proses.";
+            var phoneNumber = "6281542053486"; // Ganti dengan nomor WhatsApp Anda
+            var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var headline = document.getElementById('headline');
+            var text = headline.innerText;
+            headline.innerText = '';
+
+            var i = 0;
+            function type() {
+                if (i < text.length) {
+                    headline.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 150);
+                }
+            }
+            type();
+        });
+    </script>
 </body>
 </html>
+
