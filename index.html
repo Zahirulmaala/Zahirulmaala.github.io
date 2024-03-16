@@ -8,28 +8,27 @@
 <style>
     
     body {
-        background: url('image.jpg') no-repeat center center fixed;
-        background-size: cover;
-        color: #ddc1eb;
+        background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700, #FFA500, #FFD700, #FFA500, #FFD700, #FFA500);
+        background-size: 200% 200%;
+        animation: gradientBackground 10s ease infinite alternate;
+        color: #333;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f0f0f0;
         margin: 0;
         padding: 20px;
-        color: #333;
-        animation: slideIn 10s ease infinite alternate;
     }
 
-    @keyframes slideIn {
+    @keyframes gradientBackground {
         0% {
-            background-position-y: 0%;
+            background-position: 0% 0%;
         }
         100% {
-            background-position-y: 100%;
+            background-position: 100% 100%;
         }
     }
 
     header {
-        background-color: #3498db;
+        background-color: #4682B4;
         color: #fff;
         padding: 7px 0;
     }
@@ -79,25 +78,24 @@
     .btn-submit {
         padding: 10px;
         margin-top: 10px;
-        background-color: #3498db;
-        color: #fff;
+        background-color: #4682B4; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        width: 100px; /* Lebar tombol */
+        width: calc(50% - 5px); /* Lebar tombol diatur 50% minus 5px untuk margin */
     }
     .btn-container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+        flex-direction: row; /* Mengatur agar tombol berada dalam satu baris */
+        justify-content: space-between; /* Mengatur agar tombol berada pada ujung kanan dan kiri */
     }
     .btn-container button {
-        margin-left: auto; /* Rata kanan */
+        margin-left: auto; /* Ratakan tombol "Pesan via WhatsApp" ke kanan */
     }
     footer {
-        background-color:linear-gradient(45deg,#fff,#ffff);
-        color: #333;
+        background-color: #4682B4; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
         text-align: center;
         padding:7px;
     }
@@ -120,9 +118,18 @@
             width: 100%;
         }
     }
+
+    /* CSS untuk logo */
+    .logo {
+        max-width: 200px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+        margin: 0 auto; /* Pusatkan logo di tengah */
+        display: block; /* Atur agar gambar menampilkan sebagai blok */
+    }
 </style>
 </head>
 <body>
+    <!-- Gambar sebagai logo -->
+    <img class="logo" src="image1.jpg" alt="ZAHIRUL MA'ALA">
 
 <h1 id="headline">ZAHIRUL MA'ALA</h1><br>
 <section class="featured">
@@ -144,17 +151,17 @@
             <button type="button" onclick="cancelMenu('menu1')">Batal</button>
         </div>
         <div class="menu-item">
-            <label for="nama">Nama & Alamat Pembeli :</label>
+            <label for="nama">Nama & Alamat  :</label>
             <input type="text" id="nama" name="nama">
         </div>
     </div>
     <div class="right-column">
         <div class="menu-item">
-            <label for="quantity1">Amount :</label>
+            <label for="quantity1">Jumlah:</label>
             <input type="number" id="quantity1" name="quantity1" min="0" value="0">
         </div>
         <div class="menu-item">
-            <label for="total">Total Price :</label>
+            <label for="total">Total Harga</label>
             <input type="text" id="total" name="total" readonly>
         </div>
         <div class="btn-container">
