@@ -6,15 +6,28 @@
 <title>Pemesanan Menu Makanan via WhatsApp</title>
 
 <style>
+    
     body {
-        background: linear-gradient(45deg, #fff, #fff);
+        background: url('image.jpg') no-repeat center center fixed;
+        background-size: cover;
         color: #ddc1eb;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f0f0f0;
         margin: 0;
         padding: 20px;
         color: #333;
+        animation: slideIn 10s ease infinite alternate;
     }
+
+    @keyframes slideIn {
+        0% {
+            background-position-y: 0%;
+        }
+        100% {
+            background-position-y: 100%;
+        }
+    }
+
     header {
         background-color: #3498db;
         color: #fff;
@@ -39,6 +52,7 @@
     h1 {
         text-align: center;
         color: #333;
+        font-size: 3em; /* Mengatur ukuran font */
     }
     h2 {
         color: #FF5733;
@@ -75,8 +89,11 @@
     .btn-container {
         display: flex;
         flex-direction: column;
-        align-items: flex-end; /* Rata kanan */
-        justify-content: center; /* Rata tengah */
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .btn-container button {
+        margin-left: auto; /* Rata kanan */
     }
     footer {
         background-color:linear-gradient(45deg,#fff,#ffff);
@@ -116,7 +133,7 @@
 </head>
 <body>
 
-<h1>ZAHIRUL MA'ALA </h1><br>
+<h1 id="headline">ZAHIRUL MA'ALA</h1><br>
 <section class="featured">
     <div class="container">
         <h2>OPEN PRE-ORDER NOW!!!</h2>
@@ -136,12 +153,8 @@
             <button type="button" onclick="cancelMenu('menu1')">Batal</button>
         </div>
         <div class="menu-item">
-            <label for="nama">Nama Pembeli :</label>
+            <label for="nama">Nama dan Alamat Pembeli :</label>
             <input type="text" id="nama" name="nama">
-        </div>
-        <div class="menu-item">
-            <label for="alamat">Alamat Pembeli :</label>
-            <input type="text" id="alamat" name="alamat">
         </div>
     </div>
     <div class="right-column">
@@ -205,13 +218,11 @@ function sendWhatsAppMessage() {
     var quantity1 = form.elements["quantity1"].value;
     var total = document.getElementById("total").value;
     var namaPembeli = form.elements["nama"].value;
-    var alamat = form.elements["alamat"].value;
 
     var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\n\n" +
                   "Berikut detail pesanan Anda:\n" +
                   "Menu 1: " + menu1 + " (Jumlah: " + quantity1 + ")\n" +
                   "Total Harga: " + total + "\n\n" +
-                  "Alamat pengiriman: " + alamat + "\n\n" +
                   "Pesanan Anda akan segera kami proses.";
 
     var phoneNumber = "6281542053486"; // Ganti dengan nomor WhatsApp Anda
@@ -219,6 +230,23 @@ function sendWhatsAppMessage() {
     
     window.open(url, '_blank');
 }
+
+// Animasi untuk menampilkan tulisan satu per satu
+document.addEventListener("DOMContentLoaded", function() {
+    var headline = document.getElementById('headline');
+    var text = headline.innerText;
+    headline.innerText = '';
+
+    var i = 0;
+    function type() {
+        if (i < text.length) {
+            headline.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 150); // Waktu delay per huruf (milidetik)
+        }
+    }
+    type();
+});
 </script>
 </body>
 </html>
