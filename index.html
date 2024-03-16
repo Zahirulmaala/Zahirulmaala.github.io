@@ -115,18 +115,9 @@
 
     /* Media query untuk ukuran layar ponsel */
     @media screen and (max-width: 768px) {
-        .container {
-            padding: 10px;
-            flex-direction: column;
-        }
         .left-column,
         .right-column {
             width: 100%;
-        }
-        .menu-item label {
-            text-align: left;
-            width: auto;
-            margin-right: 0;
         }
     }
 </style>
@@ -153,7 +144,7 @@
             <button type="button" onclick="cancelMenu('menu1')">Batal</button>
         </div>
         <div class="menu-item">
-            <label for="nama">Nama dan Alamat Pembeli :</label>
+            <label for="nama">Nama & Alamat Pembeli :</label>
             <input type="text" id="nama" name="nama">
         </div>
     </div>
