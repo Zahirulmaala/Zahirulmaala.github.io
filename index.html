@@ -39,21 +39,19 @@ h2 {
 .menu-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .menu-item label {
-    color: #333; /* Warna teks */
-    width: 150px;
+    flex: 0 0 150px; /* Lebar label tetap 150px */
     margin-right: 10px;
     text-align: right;
 }
 
-.menu-item input, 
+.menu-item input,
 .menu-item select {
+    flex: 1; /* Input dan select mengisi sisa ruang */
     padding: 5px;
-    margin-left: 5px;
-    flex: 1;
 }
 
 .btn-submit {
@@ -171,7 +169,7 @@ footer {
         <div class="menu-item">
             <label for="menu">Menu:</label>
             <select name="menu" id="menu">
-                <option value="0" disabled selected></option>
+                <option value="0" disabled selected>Pilih menu</option>
                 <option value="15">Nasi Ayam SerunDazzle 15k</option>
                 <option value="15">Nasi Ayam Rica-Rica 15k</option>
                 <option value="15">Mie Gacoan 14k</option>
@@ -184,12 +182,11 @@ footer {
         <div class="menu-item">
             <label for="alamat">Alamat:</label>
             <select id="alamat" name="alamat">
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Pilih alamat</option>
                 <option value="SBH">SBH</option>
-                <option value="NBH">Landed</option>
+                <option value="Landed">Landed</option>
                 <option value="Paviliun">Paviliun</option>
-                <option value="NBH">Elvis</option>
-                <option value="Elvis">NBH</option>
+                <option value="Elvis">Elvis</option>
             </select>
         </div>
         <div class="menu-item">
@@ -205,7 +202,7 @@ footer {
             <input type="text" id="total" name="total" readonly>
         </div>
         <div class="btn-container">
-            <button type="button" class="btn-submit" onclick="calculateTotal()">Calculate Total</button>
+            <button type="button" class="btn-submit" onclick="calculateTotal()">Hitung Total</button>
             <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
         </div>
     </form>
@@ -270,3 +267,4 @@ footer {
     </script>
 </body>
 </html>
+
