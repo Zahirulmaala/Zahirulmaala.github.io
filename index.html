@@ -36,10 +36,16 @@ h2 {
     text-align: center;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Rata tengah vertikal */
+    justify-content: center; /* Rata tengah horizontal */
+}
+
 .menu-item {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Meratakan di tengah-tengah dan menyamakan ke kiri dan kanan */
     margin-bottom: 15px;
 }
 
@@ -167,47 +173,49 @@ footer {
         </div>
     </section>
 
-    <form id="orderForm" class="container">
-        <div class="menu-item">
-            <label for="menu">Menu:</label>
-            <select name="menu" id="menu">
-                <option value="0" disabled selected>Pilih menu</option>
-                <option value="15">Nasi Ayam SerunDazzle 15k</option>
-                <option value="15">Nasi Ayam Rica-Rica 15k</option>
-                <option value="15">Mie Gacoan 14k</option>
-            </select>
-        </div>
-        <div class="menu-item">
-            <label for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama">
-        </div>
-        <div class="menu-item">
-            <label for="alamat">Alamat:</label>
-            <select id="alamat" name="alamat">
-                <option value="" disabled selected>Pilih alamat</option>
-                <option value="SBH">SBH</option>
-                <option value="Landed">Landed</option>
-                <option value="Paviliun">Paviliun</option>
-                <option value="Elvis">Elvis</option>
-            </select>
-        </div>
-        <div class="menu-item">
-            <label for="kamar">Kamar:</label>
-            <input type="text" id="kamar" name="kamar">
-        </div>
-        <div class="menu-item">
-            <label for="quantity1">Jumlah:</label>
-            <input type="number" id="quantity1" name="quantity1" min="0" value="0">
-        </div>
-        <div class="menu-item">
-            <label for="total">Harga:</label>
-            <input type="text" id="total" name="total" readonly>
-        </div>
-        <div class="btn-container">
-            <button type="button" class="btn-submit" onclick="calculateTotal()">Hitung Total</button>
-            <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
-        </div>
-    </form>
+    <div class="form-container">
+        <form id="orderForm">
+            <div class="menu-item">
+                <label for="menu">Menu:</label>
+                <select name="menu" id="menu">
+                    <option value="0" disabled selected>Pilih menu</option>
+                    <option value="15">Nasi Ayam SerunDazzle 15k</option>
+                    <option value="15">Nasi Ayam Rica-Rica 15k</option>
+                    <option value="15">Mie Gacoan 14k</option>
+                </select>
+            </div>
+            <div class="menu-item">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama">
+            </div>
+            <div class="menu-item">
+                <label for="alamat">Alamat:</label>
+                <select id="alamat" name="alamat">
+                    <option value="" disabled selected>Pilih alamat</option>
+                    <option value="SBH">SBH</option>
+                    <option value="Landed">Landed</option>
+                    <option value="Paviliun">Paviliun</option>
+                    <option value="Elvis">Elvis</option>
+                </select>
+            </div>
+            <div class="menu-item">
+                <label for="kamar">Kamar:</label>
+                <input type="text" id="kamar" name="kamar">
+            </div>
+            <div class="menu-item">
+                <label for="quantity1">Jumlah:</label>
+                <input type="number" id="quantity1" name="quantity1" min="0" value="0">
+            </div>
+            <div class="menu-item">
+                <label for="total">Harga:</label>
+                <input type="text" id="total" name="total" readonly>
+            </div>
+            <div class="btn-container">
+                <button type="button" class="btn-submit" onclick="calculateTotal()">Hitung Total</button>
+                <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
+            </div>
+        </form>
+    </div>
 
     <div class="container">
         <div>
