@@ -39,6 +39,7 @@ h2 {
 .menu-item {
     display: flex;
     align-items: center;
+    justify-content: center; /* Meratakan tengah */
     margin-bottom: 15px;
 }
 
@@ -52,6 +53,7 @@ h2 {
 .menu-item select {
     flex: 1; /* Input dan select mengisi sisa ruang */
     padding: 5px;
+    width: 100%; /* Menyamakan lebar kotak input */
 }
 
 .btn-submit {
@@ -62,7 +64,7 @@ h2 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: calc(50% - 5px); /* Lebar tombol diatur 50% minus 5px untuk margin */
+    width: 50%; /* Lebar tombol diatur 50% */
 }
 
 .btn-container {
