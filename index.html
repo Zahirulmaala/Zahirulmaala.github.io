@@ -7,58 +7,32 @@
 
 <style>
 body {
-    background: linear-gradient(45deg, #ecd6a1, #c779d0, #82addb, #ebccff, #ecd6a1, #c779d0, #82addb, #ebccff); /* Warna vintage gradient */
-    background-size: 400% 400%;
-    animation: gradientBackground 10s ease infinite alternate;
-    color: #ddc1eb;
+    background-color: #28a745; /* Warna background hijau */
+    color: #333; /* Warna teks */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
-    color: #333;
-}
-
-@keyframes gradientBackground {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
-header {
-    background-color: #3498db;
-    color: #fff;
-    padding: 7px 0;
 }
 
 .container {
     max-width: 900px;
     margin: auto;
-    background-color: hsl(12, 9%, 89%);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
-.left-column,
-.right-column {
-    width: 45%;
+header {
+    background-color: #28a745; /* Warna background hijau */
+    color: #fff; /* Warna teks */
+    padding: 7px 0;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    font-size: 1em; /* Mengatur ukuran font */
-    white-space: nowrap; /* Agar teks tidak pindah ke baris berikutnya */
+    font-size: 1.5em; /* Ukuran font yang sedikit lebih besar */
 }
 
 h2 {
-    color: #FF5733;
+    color: #FF5733; /* Warna teks oranye */
     text-align: center;
 }
 
@@ -69,14 +43,14 @@ h2 {
 }
 
 .menu-item label {
-    color: #333;
+    color: #333; /* Warna teks */
     width: 150px;
     margin-right: 10px;
     text-align: right;
 }
 
-.menu-item select, 
-.menu-item input {
+.menu-item input, 
+.menu-item select {
     padding: 5px;
     margin-left: 5px;
     flex: 1;
@@ -85,8 +59,8 @@ h2 {
 .btn-submit {
     padding: 10px;
     margin-top: 10px;
-    background-color: #3498db;
-    color: #fff;
+    background-color: #28a745; /* Warna background hijau */
+    color: #fff; /* Warna teks */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -95,15 +69,19 @@ h2 {
 
 .btn-container {
     display: flex;
-    flex-direction: row; /* Mengatur agar tombol berada dalam satu baris */
-    justify-content: space-between; /* Mengatur agar tombol berada pada ujung kanan dan kiri */
+    justify-content: space-between;
 }
 
 footer {
-    background-color:linear-gradient(45deg,#fff,#ffff);
-    color: #333;
+    background-color: #28a745; /* Warna background hijau */
+    color: #fff; /* Warna teks */
     text-align: center;
-    padding:7px;
+    padding: 7px;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
 }
 
 .image-gallery {
@@ -125,17 +103,6 @@ footer {
     }
 }
 
-/* CSS untuk logo */
-.logo {
-    max-width: 100%; /* Sesuaikan ukuran logo sesuai kebutuhan */
-    cursor: pointer;
-    transition: transform 0.5s; /* Transisi agar perubahan transformasi lebih halus */
-}
-
-.logo:hover {
-    transform: perspective(100px) rotateY(-35); /* Efek buka buku ketika dihover */
-}
-
 /* Animasi gerakan teks */
 @keyframes slideText {
     0%, 100% {
@@ -151,89 +118,112 @@ footer {
     display: inline-block; /* Membuat setiap huruf berada di baris yang sama */
 }
 
+/* Animasi teks yang bergerak mengetik ulang */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+/* CSS untuk logo */
+.logo {
+    max-width: 100%; /* Sesuaikan ukuran logo sesuai kebutuhan */
+    cursor: pointer;
+    transition: transform 0.5s; /* Transisi agar perubahan transformasi lebih halus */
+}
+
+#movingText {
+    overflow: hidden;
+    border-right: .15em solid putih;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3s steps(20, end), blink-caret .1s step-end infinite;
+}
+
 </style>
 </head>
 <body>
-    <!-- Gambar sebagai logo -->
-    <img class="logo" src="image1.jpg" alt="ZAHIRUL MA'ALA">
+    <header>
+        <h1 id="movingText">
+            <span>Z</span>
+            <span>A</span>
+            <span>H</span>
+            <span>I</span>
+            <span>R</span>
+            <span>U</span>
+            <span>L</span>
+            <span>&nbsp;</span>
+            <span>M</span>
+            <span>A</span>
+            <span>'</span>
+            <span>A</span>
+            <span>L</span>
+            <span>A</span>
+        </h1>
+    </header>
 
-    <h1 id="movingText">
-        <span>Z</span>
-        <span>A</span>
-        <span>H</span>
-        <span>I</span>
-        <span>R</span>
-        <span>U</span>
-        <span>L</span>
-        <span>&nbsp;</span>
-        <span>M</span>
-        <span>A</span>
-        <span>'</span>
-        <span>A</span>
-        <span>L</span>
-        <span>A</span>
-    </h1><br>
     <section class="featured">
         <div class="container">
             <h2>OPEN PRE-ORDER NOW!!!</h2>
-            <div class="image-gallery">
-            </div>
         </div>
     </section>
 
     <form id="orderForm" class="container">
-        <div class="left-column">
-            <div class="menu-item">
-                <label for="menu1">Menu:</label>
-                <select name="menu1" id="menu1">
-                    <option value="0" disabled selected></option>
-                    <option value="15">Nasi Ayam SerunDazzle 15k</option>
-                    <option value="15">Nasi Ayam Sambal Rusa 15k</option>
-                    <option value="15">Mie Gacoan 14k</option>
-                    
-
-
-                </select>
-            
-            </div>
-            <div class="menu-item">
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="nama">
-            </div>
-            <div class="menu-item">
-                <label for="alamat">Alamat:</label>
-                <input type="text" id="alamat" name="alamat">
-            </div>
+        <div class="menu-item">
+            <label for="menu">Menu:</label>
+            <select name="menu" id="menu">
+                <option value="0" disabled selected></option>
+                <option value="15">Nasi Ayam SerunDazzle 15k</option>
+                <option value="15">Nasi Ayam Rica-Rica 15k</option>
+                <option value="15">Mie Gacoan 14k</option>
+            </select>
         </div>
-        <div class="right-column">
-            <div class="menu-item">
-                <label for="quantity1">Jumlah:</label>
-                <input type="number" id="quantity1" name="quantity1" min="0" value="0">
-            </div>
-            <div class="menu-item">
-                <label for="total">Harga:</label>
-                <input type="text" id="total" name="total" readonly>
-            </div>
-            <div class="btn-container">
-                <button type="button" class="btn-submit" onclick="calculateTotal()">Calculate Total</button>
-                <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
-            </div>
+        <div class="menu-item">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama">
+        </div>
+        <div class="menu-item">
+            <label for="alamat">Alamat:</label>
+            <select id="alamat" name="alamat">
+                <option value="" disabled selected></option>
+                <option value="SBH">SBH</option>
+                <option value="NBH">Landed</option>
+                <option value="Paviliun">Paviliun</option>
+                <option value="NBH">Elvis</option>
+                <option value="Elvis">NBH</option>
+            </select>
+        </div>
+        <div class="menu-item">
+            <label for="kamar">Kamar:</label>
+            <input type="text" id="kamar" name="kamar">
+        </div>
+        <div class="menu-item">
+            <label for="quantity1">Jumlah:</label>
+            <input type="number" id="quantity1" name="quantity1" min="0" value="0">
+        </div>
+        <div class="menu-item">
+            <label for="total">Harga:</label>
+            <input type="text" id="total" name="total" readonly>
+        </div>
+        <div class="btn-container">
+            <button type="button" class="btn-submit" onclick="calculateTotal()">Calculate Total</button>
+            <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
         </div>
     </form>
 
     <div class="container">
-        <div class="left-column">
-            <h2>Metode Pembayaran</h2>
+        <div>
+            <h2>Metode Pembayaran</h2>        
+
             <ul>
                 <li id="dana">DANA-OVO-GoPay : 081225858050 <span style="color: red;">(Note: for OVo & Gopay there is an additional fee of IDR 1,000)</span></li>
                 <li id="jago">Bank Jago : 508489581079 (Findi Kristiana Dewi S)</li>
                 <li id="bni">Bank BNI : 1764437171 (Findi Kristiana Dewi S)</li>
             </ul>
-            <p> Konfirmasi via WhatsApp dengan menyertakan bukti transfer dan nomor pesanan Anda.</p>
         </div>
-        <div class="right-column">
-            <img src="image1.jpg" alt="Metode Pembayaran" style="max-width: 100%;">
-        </div>
+    </div>
+
+    <div class="image-gallery">
+        <img class="logo" src="image1.jpg" alt="Metode Pembayaran">
     </div>
 
     <footer>
@@ -241,59 +231,42 @@ footer {
     </footer>
 
     <script>
-        function cancelMenu(menuId) {
-            // Mengatur pilihan menu kembali ke opsi default
-            document.getElementById(menuId).selectedIndex = 0;
-        }
-
         function calculateTotal() {
-            var menu1Price = parseInt(document.getElementById("menu1").value);
+            var menu1Price = parseInt(document.getElementById("menu").value);
             var quantity1 = parseInt(document.getElementById("quantity1").value);
-
-            // Menghitung total harga untuk setiap menu
             var totalMenu1 = menu1Price * quantity1;
-
-            // Menjumlahkan total harga dari semua menu
             var total = totalMenu1;
-            
-            // Menampilkan total harga di elemen input
             document.getElementById("total").value = total + "k";
         }
 
         function sendWhatsAppMessage() {
             var form = document.getElementById("orderForm");
-            var menu1 = form.elements["menu1"].options[form.elements["menu1"].selectedIndex].text;
+            var menu1 = form.elements["menu"].options[form.elements["menu"].selectedIndex].text;
             var quantity1 = form.elements["quantity1"].value;
             var total = document.getElementById("total").value;
             var namaPembeli = form.elements["nama"].value;
             var alamatPembeli = form.elements["alamat"].value;
-
-            // Informasi metode pembayaran
+            var kamar = form.elements["kamar"].value;
             var dana = document.getElementById("dana").innerText;
             var jago = document.getElementById("jago").innerText;
             var bni = document.getElementById("bni").innerText;
-
             var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\n\n" +
                         "Berikut detail pesanan Anda:\n" +
                         "Menu 1: " + menu1 + " (Jumlah: " + quantity1 + ")\n" +
                         "Total Harga: " + total + "\n\n" +
                         "Alamat Pengiriman: " + alamatPembeli + "\n\n" +
+                        "Kamar: " + kamar + "\n\n" +
                         "Metode Pembayaran:\n" +
                         "- " + dana + "\n" +
                         "- " + jago + "\n" +
-                        "- " + bni + "\n\n" +
-                        "Silakan transfer sesuai metode pembayaran yang Anda pilih. Pesanan Anda akan segera kami proses.";
-
-            var phoneNumber1 = "6281225858050"; // Nomor WhatsApp pertama
-            var phoneNumber2 = "6281542053486"; // Nomor WhatsApp kedua
+                        "- " + bni;
+            var phoneNumber1 = "6281225858050";
+            var phoneNumber2 = "6281542053486";
             var url1 = "https://api.whatsapp.com/send?phone=" + phoneNumber1 + "&text=" + encodeURIComponent(message);
             var url2 = "https://api.whatsapp.com/send?phone=" + phoneNumber2 + "&text=" + encodeURIComponent(message);
-            
-            // Buka tautan WhatsApp untuk kedua nomor
             window.open(url1, '_blank');
             window.open(url2, '_blank');
         }
-
     </script>
 </body>
 </html>
